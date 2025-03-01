@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../provider'
 
 export default function Login() {
-    const handleLogin = () => {}
+    const { UserLogin } = useContext(AuthContext)
+    const handleLogin = (e) => {
+        e.preventDefault()
+        const form = new FormData(e.target)
+        const email = form.get('email')
+
+        const pass = form.get('password')
+
+        UserLogin(email, pass)
+            .then((res) => {
+                console.log(res)
+            })
+            .catch((error) => console.log(error))
+    }
     return (
         <div>
             {' '}
