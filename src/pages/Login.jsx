@@ -45,6 +45,9 @@ export default function Login() {
                                             Forgot password?
                                         </a>
                                     </label>
+                                    <a href="/auth/register">
+                                        dont have an account
+                                    </a>
                                 </div>
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary">
